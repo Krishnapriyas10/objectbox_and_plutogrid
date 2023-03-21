@@ -9,7 +9,6 @@
 
 import 'dart:typed_data';
 
-// ignore: depend_on_referenced_packages
 import 'package:flat_buffers/flat_buffers.dart' as fb;
 import 'package:objectbox/internal.dart'; // generated code can access "internal" functionality
 import 'package:objectbox/objectbox.dart';
@@ -23,7 +22,7 @@ final _entities = <ModelEntity>[
   ModelEntity(
       id: const IdUid(1, 5724045424950627846),
       name: 'entity_employee',
-      lastPropertyId: const IdUid(4, 3327692763578577566),
+      lastPropertyId: const IdUid(5, 8240352325973130780),
       flags: 0,
       properties: <ModelProperty>[
         ModelProperty(
@@ -37,14 +36,14 @@ final _entities = <ModelEntity>[
             type: 9,
             flags: 0),
         ModelProperty(
-            id: const IdUid(3, 1439318843443173438),
-            name: 'age',
-            type: 6,
-            flags: 0),
-        ModelProperty(
             id: const IdUid(4, 3327692763578577566),
             name: 'address',
             type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(5, 8240352325973130780),
+            name: 'age',
+            type: 6,
             flags: 0)
       ],
       relations: <ModelRelation>[],
@@ -58,7 +57,7 @@ Future<Store> openStore(
         int? fileMode,
         int? maxReaders,
         bool queriesCaseSensitiveDefault = true,
-        String? macosApplicationGroup, required String Directory}) async =>
+        String? macosApplicationGroup}) async =>
     Store(getObjectBoxModel(),
         directory: directory ?? (await defaultStoreDirectory()).path,
         maxDBSizeInKB: maxDBSizeInKB,
@@ -77,7 +76,7 @@ ModelDefinition getObjectBoxModel() {
       lastSequenceId: const IdUid(0, 0),
       retiredEntityUids: const [],
       retiredIndexUids: const [],
-      retiredPropertyUids: const [],
+      retiredPropertyUids: const [1439318843443173438],
       retiredRelationUids: const [],
       modelVersion: 5,
       modelVersionParserMinimum: 5,
@@ -95,11 +94,11 @@ ModelDefinition getObjectBoxModel() {
         objectToFB: (entity_employee object, fb.Builder fbb) {
           final nameOffset = fbb.writeString(object.name);
           final addressOffset = fbb.writeString(object.address);
-          fbb.startTable(5);
+          fbb.startTable(6);
           fbb.addInt64(0, object.id);
           fbb.addOffset(1, nameOffset);
-          fbb.addInt64(2, object.age);
           fbb.addOffset(3, addressOffset);
+          fbb.addInt64(4, object.age);
           fbb.finish(fbb.endTable());
           return object.id;
         },
@@ -111,7 +110,7 @@ ModelDefinition getObjectBoxModel() {
               id: const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0),
               name: const fb.StringReader(asciiOptimization: true)
                   .vTableGet(buffer, rootOffset, 6, ''),
-              age: const fb.Int64Reader().vTableGet(buffer, rootOffset, 8, 0),
+              age: const fb.Int64Reader().vTableGet(buffer, rootOffset, 12, 0),
               address: const fb.StringReader(asciiOptimization: true)
                   .vTableGet(buffer, rootOffset, 10, ''));
 
@@ -132,11 +131,11 @@ class entity_employee_ {
   static final name =
       QueryStringProperty<entity_employee>(_entities[0].properties[1]);
 
-  /// see [entity_employee.age]
-  static final age =
-      QueryIntegerProperty<entity_employee>(_entities[0].properties[2]);
-
   /// see [entity_employee.address]
   static final address =
-      QueryStringProperty<entity_employee>(_entities[0].properties[3]);
+      QueryStringProperty<entity_employee>(_entities[0].properties[2]);
+
+  /// see [entity_employee.age]
+  static final age =
+      QueryIntegerProperty<entity_employee>(_entities[0].properties[3]);
 }

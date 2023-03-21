@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "1:5724045424950627846",
-      "lastPropertyId": "4:3327692763578577566",
+      "lastPropertyId": "5:8240352325973130780",
       "name": "entity_employee",
       "properties": [
         {
@@ -20,14 +20,14 @@
           "type": 9
         },
         {
-          "id": "3:1439318843443173438",
-          "name": "age",
-          "type": 6
-        },
-        {
           "id": "4:3327692763578577566",
           "name": "address",
           "type": 9
+        },
+        {
+          "id": "5:8240352325973130780",
+          "name": "age",
+          "type": 6
         }
       ],
       "relations": []
@@ -41,7 +41,9 @@
   "modelVersionParserMinimum": 5,
   "retiredEntityUids": [],
   "retiredIndexUids": [],
-  "retiredPropertyUids": [],
+  "retiredPropertyUids": [
+    1439318843443173438
+  ],
   "retiredRelationUids": [],
   "version": 1
 }

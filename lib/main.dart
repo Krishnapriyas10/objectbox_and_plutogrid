@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' show WidgetsFlutterBinding, runApp;
+import 'package:flutter/material.dart';
 
 import 'package:get/get.dart' show GetMaterialApp;
 

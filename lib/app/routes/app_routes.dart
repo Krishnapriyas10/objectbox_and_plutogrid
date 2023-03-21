@@ -6,9 +6,11 @@ abstract class Routes {
 
   static const HOME = _Paths.HOME;
   static const DATABASE = _Paths.DATABASE;
+  static const PLUTOGRID = _Paths.PLUTOGRID;
 }
 
 abstract class _Paths {
   static const HOME = '/home';
   static const DATABASE = '/database';
+  static const PLUTOGRID = '/plutogrid';
 }

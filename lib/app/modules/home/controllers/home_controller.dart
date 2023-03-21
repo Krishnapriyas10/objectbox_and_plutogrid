@@ -65,7 +65,7 @@ class HomeController extends GetxController {
           address: txt_addressController.text);
       databaseservice().insertupdateemployee(model: data);
       // return result;
-      Get.toNamed(Routes.DATABASE);
+      Get.toNamed(Routes.PLUTOGRID);
     }
   }
 

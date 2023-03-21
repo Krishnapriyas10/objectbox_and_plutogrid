@@ -5,7 +5,7 @@ class entity_employee {
   @Id()
   int id = 0;
   String name;
-  dynamic age;
+  int age;
   String address;
   entity_employee(
       {this.id = 0,
